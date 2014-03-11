@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Speedometer</string>
+    <string name="noGPS">Searching for GPS...</string>
+	<string name="start_application">Start Speedometer</string>
+	
+	<!-- MENU OPTIONS -->
+	<string name="units">Units</string>
+	<string name="unit_kmh">km/h</string>
+	<string name="unit_mph">mph</string>
+	<string name="app_exit">Exit</string>
+	
+	<!-- CARD NAMES -->
+	<string name="card_lbl_spedo">Speedometer</string>
+	
+</resources>
+

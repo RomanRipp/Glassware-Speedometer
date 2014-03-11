@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item
+	    android:id="@+id/units"
+	    android:title="@string/units">
+	<!-- The unit selection submenu --> 
+	    <menu>
+        	<item
+            	android:id="@+id/kmh"
+            	android:title="@string/unit_kmh"/>
+    		<item
+            	android:id="@+id/mph"
+            	android:title="@string/unit_mph"/>
+    	</menu>
+   	</item>		
+	<item
+        android:id="@+id/exit"
+        android:title="@string/app_exit"
+        android:icon="@drawable/ic_exit" />
+</menu>
