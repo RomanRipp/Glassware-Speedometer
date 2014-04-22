@@ -20,7 +20,6 @@ import rripp.android.glass.speedometer.ui.SpeedometerRenderer;
 import rripp.android.glass.speedometer.ui.SpeedometerView;
 
 import com.google.android.glass.timeline.LiveCard;
-import com.google.android.glass.timeline.TimelineManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
@@ -35,7 +34,7 @@ public class SpeedometerService extends Service implements GPSCallback{
 	private final String TAG = SpeedometerService.class.getSimpleName();
     private SpeedometerRenderer mRenderer;
     private static final String LIVE_CARD_TAG = "Spedometer";
-    private TimelineManager mTimelineManager;
+    //private TimelineManager mTimelineManager;
     private GPSManager mGPSManager; 
     private LiveCard mLiveCard;
 
@@ -62,7 +61,7 @@ public class SpeedometerService extends Service implements GPSCallback{
     public void onCreate() {
         super.onCreate();
         Log.d(TAG,"Service created");
-        mTimelineManager = TimelineManager.from(this);
+        //mTimelineManager = TimelineManager.from(this);
     }
     
     @Override
@@ -81,8 +80,9 @@ public class SpeedometerService extends Service implements GPSCallback{
     	//Publish the Spedometer gauge on a time line
     	if (mLiveCard == null) {
     		Context context = getApplicationContext();
-    		mTimelineManager = TimelineManager.from(context);
-            mLiveCard = mTimelineManager.createLiveCard(LIVE_CARD_TAG);
+    		//mTimelineManager = TimelineManager.from(context);
+            //mLiveCard = mTimelineManager.createLiveCard(LIVE_CARD_TAG);
+    		mLiveCard = new LiveCard(context, LIVE_CARD_TAG);
             mLiveCard.setDirectRenderingEnabled(true)
             		.getSurfaceHolder().addCallback(mRenderer);
             //On click open menu 

@@ -32,6 +32,8 @@ public class MenuActivity extends Activity {
 	
 	private SpeedometerView mView;
 	private SpeedometerService mService;
+	private boolean mAttachedToWindow;
+	private boolean mOptionsMenuOpen;
 	
     private ServiceConnection mConnection = new ServiceConnection() {
         @Override 
@@ -57,9 +59,25 @@ public class MenuActivity extends Activity {
 		bindService(new Intent(this, SpeedometerService.class), mConnection, 0);
 	}
 
+	@Override
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        mAttachedToWindow = true;
+        openOptionsMenu();
+    }
+
+    @Override
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        mAttachedToWindow = false;
+    }
+
     @Override
     public void openOptionsMenu() {
-    	super.openOptionsMenu();
+    	if (!mOptionsMenuOpen && mAttachedToWindow){
+    		mOptionsMenuOpen = true;
+    		super.openOptionsMenu();
+    	}
     }
 
 	
@@ -103,7 +121,7 @@ public class MenuActivity extends Activity {
 
     @Override
     public void onOptionsMenuClosed(Menu menu) {
-        // Nothing else to do, closing the Activity.
+    	mOptionsMenuOpen = false;
     	finish();
     }
 }

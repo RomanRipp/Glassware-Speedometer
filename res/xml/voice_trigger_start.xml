@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<trigger keyword="@string/start_application" />
+<!--trigger command =  "SHOW_ME_MY_SPEED"/>-->
+<trigger keyword="@string/start_application" /> 
