@@ -90,8 +90,8 @@ public class SpeedometerService extends Service implements GPSCallback{
             mLiveCard.setAction(PendingIntent.getActivity(context, 0,
                     intent, 0));
             mLiveCard.publish(LiveCard.PublishMode.REVEAL);
-            } else {
         }
+    	
         return START_STICKY;
     }
 

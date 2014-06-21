@@ -24,14 +24,13 @@ import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.FrameLayout;
-
 import com.google.android.glass.timeline.DirectRenderingCallback;
 
 import java.util.concurrent.TimeUnit;
 
 import rripp.android.glass.speedometer.R;
 
-public class SpeedometerRenderer implements DirectRenderingCallback{
+public class SpeedometerRenderer implements DirectRenderingCallback {
 
     private static final String TAG = SpeedometerRenderer.class.getSimpleName();
 
@@ -60,6 +59,7 @@ public class SpeedometerRenderer implements DirectRenderingCallback{
         mLayout = (FrameLayout) inflater.inflate(R.layout.activity_speedometer, null);
         Log.d(TAG, "Layout inflated.");
         mSpeedometerView = (SpeedometerView) mLayout.findViewById(R.id.speedometer);
+        //getWindow().requestFeature(WindowUtils.FEATURE_VOICE_COMMANDS);
         //mGPSManager = gpsManager;
     }
     
