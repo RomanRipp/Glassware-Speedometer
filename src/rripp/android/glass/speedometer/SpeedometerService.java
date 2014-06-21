@@ -77,7 +77,7 @@ public class SpeedometerService extends Service implements GPSCallback{
     	if (mRenderer == null){
     		mRenderer = new SpeedometerRenderer(this);
     	}
-    	//Publish the Spedometer gauge on a time line
+    	//Publish the Speedometer gauge on a time line
     	if (mLiveCard == null) {
     		Context context = getApplicationContext();
     		//mTimelineManager = TimelineManager.from(context);
@@ -91,7 +91,7 @@ public class SpeedometerService extends Service implements GPSCallback{
                     intent, 0));
             mLiveCard.publish(LiveCard.PublishMode.REVEAL);
         }
-    	
+    	//Create imersion
         return START_STICKY;
     }
 
